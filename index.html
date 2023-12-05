@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIS</title>
+    <script type="text/javascript">
+      const redirect = (r) => {
+        if (r.search[1] === '/' ) {
+          let decoded = r.search.slice(1).split('&').map( (s) => { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState( null, null, r.pathname.slice(0, -1) + decoded + r.hash );
+        }
+      };
+      redirect(window.location);
+    </script>
+  </head>
+  <body>
+    <a class="skipnav" href="#primary-navigation" style="color:#737373">Skip to primary navigation</a>
+    <a class="skipnav" href="#main-content" style="color:#737373">Skip to main content</a>
+    <div id="root"></div>
+    <script type="module" src="/src/_main.jsx"></script>
+  </body>
+</html>
+

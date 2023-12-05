@@ -1,0 +1,35 @@
+
+.eis-search-stretch {
+  
+  @include breakpoint(S) {
+    min-width: 250px;
+
+    &__dashboard {
+      min-width: 250px;
+    }
+  }
+
+  @include breakpoint(M) {
+    min-width: 275px;
+    
+    &__dashboard {
+      min-width: 300px;
+    }
+  }
+
+  @include breakpoint(L) {
+    min-width: 350px;
+    
+    &__dashboard {
+      min-width: 500px;
+    }
+  }
+
+  @include breakpoint(XL) {
+    min-width: 475px;
+    
+    &__dashboard {
+      min-width: 650px;
+    }
+  }
+}

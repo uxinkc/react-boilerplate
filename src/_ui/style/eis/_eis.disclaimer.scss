@@ -1,0 +1,11 @@
+
+// override FAM Style
+.fam-disclaimer {
+
+  position: sticky; top: 0;
+
+  &__bd {
+    max-width: 100% //calc($site-max-width + ($size-medium));
+  }
+
+}
