@@ -94,7 +94,7 @@ const ContentTabs = (_props) => {
             {
               tabsData.map( (tab) => {
                 let markup = (
-                  <div className="fam-content__tabs-container" id={tab.containerId}>
+                  <div key={ tab.containerId } className="fam-content__tabs-container" id={tab.containerId}>
                     {tab.container}
                   </div>
                 );
