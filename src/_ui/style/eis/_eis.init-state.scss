@@ -1,0 +1,33 @@
+$box-bgcolor-default: $white;
+$box-border-color: $color-fam-tertiary-200;
+$box-padding: $size-medium;
+
+.eis-init-state--box {
+  
+  & {
+    color: $color-fam-tertiary;
+    border: 1px $box-border-color solid;
+    background-color: $box-bgcolor-default;
+    border-radius: 0;
+    padding: $box-padding;
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__bd {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 1vh;
+  }
+
+}

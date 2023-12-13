@@ -33,6 +33,11 @@ const NavDrawer = (_props) => {
     goto(_obj.path);
   }
 
+  const openProfile = (_obj) => {
+    if(_obj.path!='') goto(_obj.path);
+    else alert('show Profile Flyout');
+  }
+
   const TEMPLATE = (
     <nav>
       <div className="eis-nav-bar fam-hide@l">
@@ -84,6 +89,39 @@ const NavDrawer = (_props) => {
                     <div className={ 'eis-nav-drawer__item' + (isMenuOpen ? '' : ' eis-nav-drawer__item--hidden')}>
                       <a href={ import.meta.env.BASE_URL + item.path}
                         onClick={(e) => {e.preventDefault(); setMenu(item)}}
+                        className={'eis-nav-drawer__link ' + (currentMenuId==item.uid ? 'eis-nav-drawer__link--active' : '')}>
+                        <span className="eis-nav-drawer__icon">
+                        <span className="eis-nav-drawer__icon-background"></span>
+                        <svg
+                            className={ item.icon.style }
+                            aria-hidden={isMenuOpen ? 'false' : 'true'}
+                            focusable="false"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d={ item.icon.path } />
+                          </svg>
+                        </span>
+                        <span className="eis-nav-drawer__label">{ item.label }</span>
+                      </a>
+                    </div>
+                  </li>
+                )
+              }
+
+            </ul>
+          </div>
+
+          <div className="eis-nav-drawer__profile">
+            <ul className="" id="user-profile" aria-hidden={ isMenuOpen ? 'false' : 'true' } aria-label="User Profile">
+              {
+                navItems.profile?.map( (item) => 
+                  <li key={ item.uid } data-control-id={item.uid} className="eis-nav-drawer__list-item">
+                    <div className={ 'eis-nav-drawer__item' + (isMenuOpen ? '' : ' eis-nav-drawer__item--hidden')}>
+                      <a href={ import.meta.env.BASE_URL + item.path}
+                        onClick={(e) => {e.preventDefault(); openProfile(item)}}
                         className={'eis-nav-drawer__link ' + (currentMenuId==item.uid ? 'eis-nav-drawer__link--active' : '')}>
                         <span className="eis-nav-drawer__icon">
                         <span className="eis-nav-drawer__icon-background"></span>

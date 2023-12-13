@@ -48,16 +48,16 @@ const ContentTabs = (_props) => {
 
   const TEMPLATE = (
     <>
-        <div className={'fam-content-tabs' + _props.TABS_CLASS ? _props.TABS_CLASS:' fam-content-tabs--justified-equal'}>
+        <div className={'fam-content-tabs ' + (_props.TABS_CLASS ? _props.TABS_CLASS: '')}>
           <ul data-testid="tabsControls" className="fam-content-tabs__list">
             {
               tabsData.map( (tab) => {
                 let markup = (
-                  <li key={ tab.id } className="fam-content-tabs__item">
+                  <li key={ tab.id } className="fam-content-tabs__item eis-content-tabs__item">
                     <button  id={tab.id}
                       role="button"
                       onClick={(e) => { e.preventDefault(), handleTabSelected(tab.id); }}
-                      className={'fam-content-tabs__label fam-content-tabs__label--large ' + String( setSelectedClass(tab.isSelected) ) }
+                      className={'fam-content-tabs__label ' + String( setSelectedClass(tab.isSelected) ) }
                       href="">
                       
                       <span className="fam-content-tabs__label-text">
@@ -68,7 +68,7 @@ const ContentTabs = (_props) => {
                             aria-hidden="true"
                             focusable="false"
                             role="img"
-                            fill={tab.iconFillHex?tab.iconFillHex:'#494440'}
+                            fill={tab.iconFillHex ? tab.iconFillHex : '#494440'}
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"

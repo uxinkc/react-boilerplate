@@ -55,6 +55,27 @@ $nav-layout: calc($main-menu-width + $sub-menu-width);
     }
   }
 
+  &__profile {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+
+    padding: $size-default;
+    padding-left: $size-base;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    a {
+      color: $color-fam-tertiary-900;
+      text-decoration: none;
+      cursor: pointer;
+      padding: ($size-default - $size-base);
+    }
+  }
+
   &__list {
     position: relative;
   }
@@ -126,6 +147,11 @@ $nav-layout: calc($main-menu-width + $sub-menu-width);
 
     &__content {
       padding: $size-default 0 0 0;
+    }
+
+    &__profile { 
+      padding: $size-default 0 0 0;
+      width: $main-menu-width;
     }
 
     &__list {
@@ -222,6 +248,7 @@ $nav-layout: calc($main-menu-width + $sub-menu-width);
       //https://sass-lang.com/documentation/values/calculations
       width: calc(100vw - $main-menu-width);
       transition: 0.3s;
+      padding-left: $size-default;
       
       &.eis-nav-drawer-layout--open {
         width: calc(100vw - $nav-layout);

@@ -2,6 +2,7 @@
 // override FAM Style
 .fam-disclaimer {
 
+  z-index: 9999;
   position: sticky; top: 0;
 
   &__bd {
